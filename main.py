@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi import Depends
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.orm import Session
-from db.db_connection import get_db
-from db.edificios_db import EdificioDB
+#from sqlalchemy.orm import Session
+#from db.db_connection import get_db
+#from db.edificios_db import EdificioDB
 
 api = FastAPI()
 
@@ -20,7 +20,7 @@ api.add_middleware(
 async def decir_hola():
     return {"mensaje": "Hola"}
 
-
+'''
 @api.get("/edificios")
 async def mostrar_edificios(db: Session = Depends(get_db)):
     lista_edificios = db.query(EdificioDB).all()
@@ -30,3 +30,4 @@ async def mostrar_edificios(db: Session = Depends(get_db)):
 async def crear_edificio(db: Session = Depends(get_db)):
 
     return { "mensaje": "Se creó el edificio correctamente." }
+'''
